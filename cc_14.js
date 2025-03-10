@@ -30,3 +30,16 @@ const arrayOfTicketCard = Array.from(ticketCardNodeList);
 arrayOfTicketCard.forEach(card => {
     card.style.backgroundColor = "red";
 });
+
+//Task 4: Implementing Ticket
+ticketContainer = document.getElementById("ticketContainer");
+ticketContainer.addEventListener('click', (event)=> {
+    if (event.target.classList.contains("metric-card")) {
+        console.log("Ticket Card Clicked");
+    }
+});
+ticketCard = document.querySelector("#ticketCard");
+ticketCard.addEventListener("click", (event)=> {
+    event.stopPropagation();
+    ticketContainer.removeChild(ticketCard);
+});
