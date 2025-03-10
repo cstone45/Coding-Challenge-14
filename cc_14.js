@@ -11,7 +11,7 @@ customerName.textContent = "Customer Name:"
 const issueDescription = document.createElement("p");
 issueDescription.textContent = "Customer Issue:";
 const issuePriority = document.createElement("label");
-issuePriority.textContent = "Issue Priority:"
+issuePriority.textContent = "High Priority:"
 const resolveButton = document.createElement("button");
 resolveButton.textContent = "Remove Issue";
 resolveButton.addEventListener("click", function() {
@@ -22,3 +22,11 @@ ticketCard.appendChild(issueDescription);
 ticketCard.appendChild(issuePriority);
 ticketCard.appendChild(resolveButton);
 ticketContainer.appendChild(ticketCard);
+
+//Task 3: Converting NodeLists to Arrays for Bulk Updates
+const ticketCardNodeList = document.querySelectorAll(".metric-card");
+ticketCard = document.querySelectorAll("High");
+const arrayOfTicketCard = Array.from(ticketCardNodeList);
+arrayOfTicketCard.forEach(card => {
+    card.style.backgroundColor = "red";
+});
